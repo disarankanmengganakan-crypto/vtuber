@@ -1,0 +1,33 @@
+スマホだけでAPK化する方法
+
+1. GitHubアカウントを作る / ログインする
+   https://github.com/
+
+2. 新しいリポジトリを作る
+   Repository name: vtuber-oshi-app
+   Public / Private はどちらでもOK
+   Create repository を押す
+
+3. このフォルダの中身をGitHubにアップロードする
+   GitHubのリポジトリ画面で Add file → Upload files
+   app、build.gradle、settings.gradle、.github フォルダなど全部をアップロード
+   Commit changes を押す
+
+4. 自動ビルドを開始する
+   リポジトリ上部の Actions タブを開く
+   Build Android APK を選ぶ
+   Run workflow があれば押す
+   なければ、アップロード後に自動で走る
+
+5. APKをダウンロードする
+   Actions → Build Android APK → 成功した実行結果を開く
+   下の Artifacts にある vtuber-oshi-debug-apk を押す
+   ダウンロードしたzipの中に app-debug.apk が入っている
+
+6. Androidに入れる
+   app-debug.apk を開く
+   「提供元不明のアプリ」を許可してインストール
+
+注意
+- これはテスト用のdebug APKです。
+- Google Playに出す場合はrelease APK/AABと署名が必要です。
